@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+
+<AnchorPane id="AnchorPane" fx:id="AnchorPane" prefHeight="406.0" prefWidth="320" style="-fx-background-image: frame.png;" styleClass="form3.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loguin.FXMLDocumentController">
+    <stylesheets>
+        <URL value="@form3.css" />
+    </stylesheets>
+    <children>
+        <Button id="btn_aceptar" fx:id="btn_aceptar" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="22.0" layoutY="301.0" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="81.0" />
+        <Label id="lbl_dpt" fx:id="lbl_dpt" alignment="CENTER" layoutX="17.0" layoutY="356.0" minHeight="16" minWidth="69" onDragDetected="#cambioDept" text="...." textFill="#31eb539a" />
+        <Button id="btn_reset" fx:id="btn_reset" layoutX="126.0" layoutY="301.0" onAction="#resetButtonAction" prefHeight="25.0" prefWidth="81.0" />
+        <loguin.custom.UserTextField id="user" fx:id="user" layoutX="115.0" layoutY="203.0" onAction="#handleButtonAction" />
+        <Label id="lbl_1" fx:id="lbl_user" layoutX="51.0" layoutY="203.0" text="User" textFill="#31ed54a1" />
+        <Label id="lbl_2" fx:id="lbl_pass" layoutX="32.0" layoutY="250.0" text="Password" textFill="#31eb5399" />
+        <loguin.custom.PassTextField id="Pf_pass" fx:id="Pf_pass" layoutX="115.0" layoutY="250.0" onAction="#handleButtonAction" />
+        <Button id="btn_salir" fx:id="btn_salir" layoutX="114.0" layoutY="356.0" mnemonicParsing="false" onAction="#salirbuttonAction" prefHeight="25.0" prefWidth="93.0" />
+        <ChoiceBox fx:id="chkbox" layoutX="234.0" layoutY="350.0" onDragDetected="#cambioDept" onMouseClicked="#cambioDept" prefHeight="37.0" prefWidth="62.0">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+             <String fx:value="01" />   
+             <String fx:value="02" />  
+             <String fx:value="03" />
+             <String fx:value="54" />                    
+             </FXCollections> 
+            </items>
+        </ChoiceBox>
+      <Label fx:id="lbl3" contentDisplay="CENTER" layoutX="234.0" layoutY="314.0" prefHeight="25.0" prefWidth="62.0" text="Dpt" textAlignment="CENTER" textFill="#31eb5399">
+         <font>
+            <Font size="3.0" />
+         </font>
+      </Label> 
+    </children>
+</AnchorPane>

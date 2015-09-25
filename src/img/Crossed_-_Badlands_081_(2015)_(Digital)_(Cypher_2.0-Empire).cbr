@@ -1,0 +1,956 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta content="4" name="dig" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="Description" content="" />
+<meta name="Keywords" content="" /><title>DataFile.com - Reliable file hosting</title><link href="/stylesheet/bundle_b68b43925235522902d187865fd2888a.css?1433417710" media="screen" rel="stylesheet" type="text/css" /><script type="text/javascript" src="/javascript/bundle_cc6c02458e0bbda7ed4b59cb944d9427.js?1432836590"></script>        <meta name="robots" content="noindex, nofollow"/>
+    </head>
+<body>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $(document).ajaxStart(function() {
+            $("#ajax-load-progress").show();
+        });
+
+        $(document).ajaxStop(function() {
+            $("#ajax-load-progress").hide();
+        });
+
+                    $(".mainpad form input:first").focus()
+        
+        $('.header .langs UL LI.first').click(function(){
+            if(!$('.langs').hasClass('expanded')){
+                    $('.langs').addClass('expanded');
+                    $('.header .langs UL LI').each(function(){
+                      if(!$(this).hasClass('first')){
+                            $(this).removeClass('hidden');
+                        }
+                    });
+            } else {
+                 $('.langs').removeClass('expanded');
+                    $('.header .langs UL LI').each(function(){
+                        if(!$(this).hasClass('first')){
+                            $(this).addClass('hidden');
+                        }
+                    });
+            }
+        });
+
+         $('.header .langs UL LI').each(function(){
+            if(!$(this).hasClass('first')){
+                $(this).bind('click', function(e){
+                    e.preventDefault();
+                    location.href='?change_language='+ $(this).attr('id');
+                });
+            }
+        });
+    });
+
+    function selectText(element) {
+	    var doc = document, text = $(element)[0], range, selection;
+	    if (doc.body.createTextRange) { //ms
+	        range = doc.body.createTextRange();
+	        range.moveToElementText(text);
+	        range.select();
+	    } else if (window.getSelection) { //all others
+	        selection = window.getSelection();
+	        range = doc.createRange();
+	        range.selectNodeContents(text);
+	        selection.removeAllRanges();
+	        selection.addRange(range);
+	    }
+	}
+</script>
+<!--=========HEADER=========-->
+<a name="top"></a>
+<table cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td class="header-left"></td>
+<td class="header">
+<!--<div class="header">-->
+<div class="page-col">
+
+<style type="text/css">
+
+    .header .logo {
+	background: url("/images/dflogo_en.png") no-repeat scroll 0 0 transparent;
+	width: 255px; /*243px;*/
+	height: 45px; /*67px;*/
+	position: absolute;
+	top: 35px;
+	margin-left: 15px;
+        margin-top: 13px;
+}
+    </style>
+
+		<div class="row">
+			<a href="/index.html">
+				<div class="logo"></div>
+			</a>
+			<div class="langs">
+				<div class="content">
+					<ul class="lang-selector">
+                                                <li class="lang first" id="en"><span style="background: url('/images/icons/langs/en.png') center left no-repeat;"></span></li><li class="lang hidden" id="ru"><span style="background: url('/images/icons/langs/ru.png') center left no-repeat"></span></li>					</ul>
+				</div>
+			 </div>
+			<div class="top-panel">
+							<div class="item signin"><a href="/login.html">Sign In</a></div>
+						</div>
+		</div>
+</div>
+<!--</div>-->
+</td>
+<td class="header-right"></td>
+</tr>
+</table>
+<!--========= END HEADER=========-->
+
+<!--=========CONTENT=========-->
+<div class="register-login" id="register-login" style="display: none;">
+	<div class="info"></div>
+</div>
+
+<script type="text/javascript">
+function showAuthDialog(text) {
+	var str = text + ' please <a href="/login.html">Sign In</a> or <a href="/registration.html">SignUp</a>';
+	$('#register-login .info').html(str);
+	$('#register-login').dialog({
+		autoOpen: false,
+		title: "Please Signin or register",
+		minWidth: '440',
+		modal: true
+	});
+	$('#register-login').dialog('open');
+}
+</script>
+
+<style type="text/css">
+#register-login .info {
+    color: #555555;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 35px;
+    text-align: center;
+}
+#register-login .info A {
+	font-size: 14px !important;
+}
+</style>
+
+<div class="content">
+	<div class="page-col">
+		<div class="row">
+			<div class="main-user-menu">
+			<table class="" border="0" cellpadding="0" cellspacing="0">
+			<col width="142" />
+                        <col width="142" />
+						<col width="142" />						<!--<col width="142" /> -->
+			<col width="142" />
+				<tr>
+											<td class="first upload" >
+							<div class="act-bg"></div><a href="/index.html">Upload Files</a>
+						</td>
+					
+											<td class="premium" ><a href="https://www.datafile.com/getpremium.html">Get Premium</a></td>
+					
+
+
+                                                                                                                                        <td class="signup" ><a href="/registration.html">Sign Up</a></td>
+                                                                                    
+
+											<td class="help last" ><a href="/help.html">Help</a>
+                                                                                                </td>
+					
+				</tr>
+			</table>
+			</div>
+			<div class="clear"></div>
+			<!--=========CONTENT-INFO=========-->
+			<link href="/css/files_download.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/js/files_download.js?1442112286"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    var counterPanel = $('.counter-panel .info .counter');
+    var captchaPanel = $('.counter-panel .info .captcha');
+    var counter =  $('.counter-panel .info .counter .time');
+    var button = $('.counter-panel .button .get-premium-button');
+    var captchaForm = $('#captchasubmitform');
+    
+    var fileIdhdn = $('<input />');
+        fileIdhdn.attr('type', 'hidden');
+        fileIdhdn.attr('id', 'request_fileId_field');
+        fileIdhdn.val('TVRFM01EYzVPVGsF9');
+        fileIdhdn.appendTo(captchaForm); 
+
+    //setting up
+    captchaForm.on('submit', function(){ return false; });
+    captchaPanel.hide();
+    counterPanel.show();
+
+    button.click(function(e){
+        e.preventDefault();
+
+        if($(this).hasClass('disabled')){
+            return false;
+        }
+
+        if (captchaPanel.is(":hidden"))
+        {
+            counterPanel.hide();
+            captchaPanel.show();
+            return;
+        }
+
+        $(this).validateCaptcha(captchaForm, function(responce){
+
+            captchaPanel.hide();
+            button.hide();
+            counterPanel.show();
+
+
+            if(responce != null && responce.token){
+                var hdn = $('<input />');
+                hdn.attr('type', 'hidden');
+                hdn.attr('id', 'responce_token_field');
+                hdn.val(responce.token);
+                hdn.appendTo(captchaForm);
+            }
+
+            counter.contdownTimer('1200', function(){
+
+                $(this).getFileDownloadLink('TVRFM01EYzVPVGsF9', captchaForm, function(link){
+                                                window.location.href = link;
+                                            }, function(msg){
+                                                showDialogError(msg);
+                                            });
+            });
+
+        }, function(msg){showDialogError(msg)});
+    });
+});
+
+function showDialogError(msg){
+
+    var dialog = $('<div />').html('<p class="dialog-error-message">' +msg +'</p>' );
+
+    var title = 'CAPTCHA is not valid';
+
+    if (msg == "Download file count limit.")
+    {
+        title = 'Downloads count limit';
+    }
+
+    dialog.dialog({
+        autoOpen: true,
+        modal: true,
+        title: title,
+        buttons: [{
+            text: "OK",
+            click: function(e) {
+
+                if (msg == "Download file count limit.")
+                {
+                    window.location.href = window.location.href;
+                }
+                else
+                {
+                    $(this).dialog('close');
+                    $(this).dialog('remove');
+                }
+            },
+            'class': 'orange'
+        }]
+    });
+
+}
+
+</script>
+
+<div class="mainpad" id="bigbutton">
+    <div class="downl-panel">
+        <div class="pan-content">
+            <div class="file-name">Crossed_-_Badlands_081_(2015)_(Digital)_(Cyph...</div>
+                            <div class="file-size">Filesize: <span class="lime">33.93 MB</span></div>
+                <div class="file-size">
+                                            &nbsp;
+                                    </div>
+                        <table class="download-time-info">
+            <tr>
+                <td class="first"><strong>Estimated download time:</strong></td>
+                <td>
+                    Free account<br />
+                    <span class="free-account-color">0 hours 28 minutes 57 seconds</span>
+                </td>
+                <td>Premium account<br />
+                    <span class="premium-account-color">0 hours 0 minutes 1 seconds</span>
+                </td>
+            </tr>
+            </table>        </div>
+    </div>
+
+    <div class="counter-panel">
+        <div class="info">
+                        <div class="captcha" style="display: none;">
+                <form id="captchasubmitform" enctype="application/x-www-form-urlencoded" action="" method="post">
+<div id="recaptcha_widget" style="display:none">
+					   <div id="recaptcha_image" onclick="javascript:Recaptcha.reload()"></div>
+					   <div class="captcha_buttons">
+						<ul>
+							<li>
+								<a onclick="Recaptcha.showhelp(); return false; " href="#">
+									<img width="16" height="16" alt="Help" src="/images/icons/recaptcha/captcha_help.png" border="0">
+								</a>
+							</li>
+							<li>
+								<a onclick="Recaptcha.switch_type('audio'); return false; " href="#">
+									<img width="14" height="12" alt="Speak" src="/images/icons/recaptcha/captcha_speak.png" border="0">
+								</a>
+							</li>
+							<li>
+								<a onclick="Recaptcha.reload(); return false; " href="#">
+									<img width="15" height="15" alt="Reload" src="/images/icons/recaptcha/captcha_reload.png" border="0">
+								</a>
+							</li>
+						</ul>
+						</div>
+					   <div class="recaptcha_only_if_incorrect_sol" style="color:red">Incorrect. Please try again</div>
+					   <input type="text" class="input-text" id="recaptcha_response_field" name="recaptcha_response_field" style="width: 255px"  />
+					</div><style type="text/css">
+			
+			.captcha_buttons {
+			
+			}
+			
+			.captcha_buttons  UL {
+			
+			}
+			
+			.captcha_buttons UL LI {
+				 margin: 5px;
+				 float: right;
+			}
+			
+			.captcha_buttons A {
+			
+			}
+			
+			.captcha_buttons A IMG {
+			
+			}
+			
+			
+			
+			</style>
+<input type="hidden" name="recaptcha_challenge_field" value="" id="captcha-challenge" /><input type="hidden" name="recaptcha_response_field" value="" id="captcha-response" /><script type="text/javascript">
+    var RecaptchaOptions = {"theme":"custom","lang":"en","custom_translations":[],"custom_theme_widget":"recaptcha_widget"};
+</script><script type="text/javascript"
+   src="https://www.google.com/recaptcha/api/challenge?k=6LdWgNgSAAAAACXqFKE69ttVU-CfV-IruHtDKCUf">
+</script><noscript>
+   <iframe src="https://www.google.com/recaptcha/api/noscript?k=6LdWgNgSAAAAACXqFKE69ttVU-CfV-IruHtDKCUf"
+       height="300" width="500" frameborder="0"></iframe><br>
+   <textarea name="recaptcha_challenge_field" rows="3" cols="40">
+   </textarea>
+   <input type="hidden" name="recaptcha_response_field"
+       value="manual_challenge">
+</noscript><script type="text/javascript" language="JavaScript">
+function windowOnLoad(fn) {
+    var old = window.onload;
+    window.onload = function() {
+        if (old) {
+            old();
+        }
+        fn();
+    };
+}
+function zendBindEvent(el, eventName, eventHandler) {
+    if (el.addEventListener){
+        el.addEventListener(eventName, eventHandler, false); 
+    } else if (el.attachEvent){
+        el.attachEvent('on'+eventName, eventHandler);
+    }
+}
+windowOnLoad(function(){
+    zendBindEvent(
+        document.getElementById("captcha-challenge").form,
+        'submit',
+        function(e) {
+            document.getElementById("captcha-challenge").value = document.getElementById("recaptcha_challenge_field").value;
+            document.getElementById("captcha-response").value = document.getElementById("recaptcha_response_field").value;
+        }    
+    );
+});
+</script></form>            </div>
+            <div class="counter" style="display: none;">
+                <p>Download will start in</p>
+                <span class="time">00:20:00</span>
+            </div>
+                    </div>
+        <div class="button" >
+            <a style="margin-top: auto; margin-bottom: auto;" class="get-premium-button" href="javascript:void(0)">
+                <span class="center">Download</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="clear"></div>
+    <br clear="all" />
+    <div class="dont-wait-info">
+        <span class="msg1">Don't want to wait?</span>
+        <span class="msg2">Download immediately with Premium!</span>
+    </div>
+    <div class="clear"></div>
+    <br clear="all" />
+    <link href="/css/getpremium_new.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/js/windowAjax.js"></script>
+<script type="text/javascript">
+    
+    var PaymentPostData;
+    var validateDialog;
+    
+$(document).ready(function(){
+    var isUserLoggedIn = 0;
+    
+    
+    $('.pay-system .btn-green').each(function(){
+        $(this).bind('click', function(e){
+            e.preventDefault();
+
+            if ($(this).attr("href") != "#")
+            {
+                location.href = $(this).attr("href");
+                return;
+            }
+
+            PaymentPostData = {
+                mid: $(this).attr('data-mid') || false,
+                plan: $(this).attr('data-period') || 0,
+                fid: $(this).attr('data-fid') || 0,
+                subscription: $(this).attr('data-ss') || 0,
+                type: $(this).attr('data-type') || '',
+                is_rebill: '0'
+            };
+            
+            if(!isUserLoggedIn){
+                registerUser(PaymentPostData);
+            } else {
+                                    doPayment(PaymentPostData);
+                            }
+        });
+    });
+
+});
+
+function registerUser(PaymentPostData) {
+    $('#get-email-dialog').dialog({
+        autoOpen: true,
+        modal: true,
+        title: "Registration on DataFile.com",
+        width: 'auto',
+        height: 'auto',
+        buttons: [{
+                text: "Cancel",
+                click: function(){ 
+                    $(this).dialog("close");
+                }
+            },{
+                text: "Continue",
+                id: 'proceedbtn',
+                'class': 'orange',
+                click: function(){ 
+                    var data = {
+                        email: $('#get-email-dialog #email').val(),
+                        password : $('#get-email-dialog #password').val(),
+                        conf_password: $('#get-email-dialog #conf_password').val(),
+                        file_id: "0"
+                    }
+                    if(!$('#get-email-dialog #confirm').is(':checked')){
+                        $('#get-email-dialog p.error').html("You must agree with Terms").show();
+                    } else {
+                        globalAjaxHandler('/simple-registration.html', 
+                            data, 
+                            function(result){
+                                if(result.success == 1){
+                                                                            doPayment(PaymentPostData);
+                                                                    } else {
+                                    $('#get-email-dialog p.error').html(result.msg).show();
+                                }
+                            }
+                        );
+                    }
+                }
+            }]
+    });
+}
+
+function doPayment(PaymentPostData) {
+    var proceedPayment = function(responce) {
+        if(PaymentPostData.type == 'sms') {
+            $('#sms-dialog').html(responce.form).dialog({
+                autoOpen: true,
+                modal: true,
+                width: 'auto',
+                height: 'auto'
+            });
+        }
+        else if (PaymentPostData.type == 'smsdostup') {
+            $('#sms-dialog').html(responce.form).dialog({
+                autoOpen: true,
+                title: "SMS Payment",
+                modal: true,
+                width: 'auto',
+                height: 'auto'
+            });
+
+            $("#sms-payment-form").submit(function(){
+                $.post($(this).attr("action"), {
+                    "pid": $(this).find("#pid").val(),
+                    "phone": $(this).find("#phone").val()
+                }, function(response){
+                    if (response.success) {
+                        location.href = "/getpremium/purchase-success.html?mid=smsdostup" + "&pid=" + $("#sms-payment-form").find("#pid").val();
+                    } else {
+                        $("#pid-label").after('<div class="error el-error" style="width:100%;text-align:center;margin-bottom:10px;"> - ' + response.error + '</div>');
+                    }
+                }, "json");
+                return false;
+            });
+        }
+        else {
+            if(responce.form){
+                $('#form-placeholder').html(responce.form);
+                $('#payment-form').submit();
+            } else {
+                if(responce.paymenterrormsg !== ''){
+                    showErrorDialog(responce.paymenterrormsg);
+                }
+            }
+        }
+    };
+
+    globalAjaxHandler('/getpremium/purchase.html', PaymentPostData, proceedPayment);
+}
+
+function showPremiumKeyDialog(){
+    $('#premium-key-dialog').dialog({
+        autoOpen: false,
+        title: 'Premium Key',
+        minWidth: '360',
+        modal: true,
+        buttons: [{
+                text: "Activate",
+                click: function(e) {
+                    $('#premium-key-dialog form').ajaxSubmit({
+                        url: $(this).attr("action"),
+                        type: "post",
+                        dataType: "json",
+                        success: function(responce){
+                            if (responce.success){
+                                var html;
+                                if (responce.url){
+                                    location.href = responce.url;
+                                } else {
+                                    var buttons = {
+                                       'Ok': function () {
+                                            $(this).dialog('close');
+                                        }
+                                    };
+                                    $("#premium-key-dialog").dialog('option', 'buttons', buttons);
+                                    html = '<div style="text-align:center; font-size:18px; margin-top:10px;">' + responce.message + '</div>';
+                                }
+                                $('#premium-key-dialog').html(html);
+                            } else {
+                                $('#premium-key-dialog').html(responce.form);
+                            }
+                        }
+                    });
+                },
+                'class': 'orange'
+        }, {
+            text: "Cancel",
+            click: function(e) {
+                $('#premium-key-dialog').dialog("close");
+            }
+        }]
+    });
+
+    $("#premium-key-dialog").dialog("open");
+}
+
+function showErrorDialog(msg){
+    var p = $('<p />');
+    
+    if(msg){
+        p.html(msg);
+    } else {
+        p.html('Unknown Error');
+    }
+    $('#premium-error-dialog').html(p);
+    
+    $('#premium-error-dialog').dialog({
+		autoOpen: false,
+		title: 'Error message',
+		minWidth: '360',
+		modal: true,
+		buttons: [{
+			text: "Close",
+			click: function(e) {
+                            $('#premium-error-dialog').dialog("close");
+                        }
+                }]
+    });
+    $("#premium-error-dialog").dialog("open");
+}
+
+</script>
+
+<div class="tarifs">
+	                        	<div class="tarif-group first popular">
+		<div class="tarif">
+                                                    <div class="cap">Best Choice</div>
+                                                                        <div class="price">$12.99</div>
+                        <div class="days">
+                                                        30&nbsp;Days                                                    </div>
+
+			<div class="buy-systems">
+				<div class="desc">
+                                   <span class="lime">1 TB</span> Bandwidth                                    <div style="height:6px"></div>
+                                                                                                                        Only <span class="lime">$0.43</span> per day!                                                                                                            </div>
+
+                                                                
+                                									                                                <div class="pay-system">
+                                                        <a class="btn-green" href="#" data-mid="qv" data-period="30" data-fid="0">
+                                                            <span class="buy-text">VISA</span>
+                                                        </a>
+                                                </div>
+                                                                                																									                                                <div class="pay-system">
+                                                        <a class="btn-green" href="#" data-mid="qm" data-period="30" data-fid="0">
+                                                            <span class="buy-text">MasterCard</span>
+                                                        </a>
+                                                </div>
+                                                                                																																																																																																	                                                <div class="pay-system">
+                                                        <a class="btn-green" href="#" data-mid="monetaru" data-period="30" data-fid="0">
+                                                            <span class="buy-text">Other methods</span>
+                                                        </a>
+                                                </div>
+                                                                                																																																																	                                            <div class="pay-system">
+                                                <a class="btn-green" href="#" data-mid="bitcoin" data-period="30" data-fid="0">
+                                                    <span class="buy-text">Bitcoin</span>
+                                                </a>
+                                            </div>
+
+                                                                                																																								                                                                                                    			</div>
+		</div>
+	</div>
+		                        	<div class="tarif-group  ">
+		<div class="tarif">
+                                                                        <div class="price">$19.99</div>
+                        <div class="days">
+                                                        60&nbsp;Days                                                    </div>
+
+			<div class="buy-systems">
+				<div class="desc">
+                                   <span class="lime">2 TB</span> Bandwidth                                    <div style="height:6px"></div>
+                                                                                                                        Save                                               <span class="lime">$6</span>
+                                                                                                             </div>
+
+                                                                
+                                									                                                <div class="pay-system">
+                                                        <a class="btn-green" href="#" data-mid="qv" data-period="60" data-fid="0">
+                                                            <span class="buy-text">VISA</span>
+                                                        </a>
+                                                </div>
+                                                                                																									                                                <div class="pay-system">
+                                                        <a class="btn-green" href="#" data-mid="qm" data-period="60" data-fid="0">
+                                                            <span class="buy-text">MasterCard</span>
+                                                        </a>
+                                                </div>
+                                                                                																																																																																																	                                                <div class="pay-system">
+                                                        <a class="btn-green" href="#" data-mid="monetaru" data-period="60" data-fid="0">
+                                                            <span class="buy-text">Other methods</span>
+                                                        </a>
+                                                </div>
+                                                                                																																																																	                                            <div class="pay-system">
+                                                <a class="btn-green" href="#" data-mid="bitcoin" data-period="60" data-fid="0">
+                                                    <span class="buy-text">Bitcoin</span>
+                                                </a>
+                                            </div>
+
+                                                                                																																								                                                                                                    			</div>
+		</div>
+	</div>
+		                        	<div class="tarif-group  ">
+		<div class="tarif">
+                                                                            <div class="best-save"></div>
+                                                <div class="price">$29.99</div>
+                        <div class="days">
+                                                        90&nbsp;Days                                                    </div>
+
+			<div class="buy-systems">
+				<div class="desc">
+                                   <span class="lime">3 TB</span> Bandwidth                                    <div style="height:6px"></div>
+                                                                                                                        Save                                               <span class="lime">$9</span>
+                                                                                                             </div>
+
+                                                                
+                                									                                                <div class="pay-system">
+                                                        <a class="btn-green" href="#" data-mid="qv" data-period="90" data-fid="0">
+                                                            <span class="buy-text">VISA</span>
+                                                        </a>
+                                                </div>
+                                                                                																									                                                <div class="pay-system">
+                                                        <a class="btn-green" href="#" data-mid="qm" data-period="90" data-fid="0">
+                                                            <span class="buy-text">MasterCard</span>
+                                                        </a>
+                                                </div>
+                                                                                																																																																																																	                                                <div class="pay-system">
+                                                        <a class="btn-green" href="#" data-mid="monetaru" data-period="90" data-fid="0">
+                                                            <span class="buy-text">Other methods</span>
+                                                        </a>
+                                                </div>
+                                                                                																																																																	                                            <div class="pay-system">
+                                                <a class="btn-green" href="#" data-mid="bitcoin" data-period="90" data-fid="0">
+                                                    <span class="buy-text">Bitcoin</span>
+                                                </a>
+                                            </div>
+
+                                                                                																																								                                                                                                    			</div>
+		</div>
+	</div>
+		        <br clear="all" />
+
+        <div class="extra-options">
+            <div class="left">
+                <div class="ssl-secure"><span class="secure">SSL</span> Secure</div>
+                <div class="anonymous"><span class="anonym-percent">100%</span> Safe & Anonymous</div>
+            </div>
+            <div class="right">
+                 <div class="webmoney"></div>
+                 <div class="maestro"></div>
+                 <div class="master-card"></div>
+                 <div class="visa-electron"></div>
+                 <div class="visa"></div>
+                 <div class="jcb"></div>
+            </div>
+            <div class="right" style="height: 10px;margin-top: 4px;">
+                * will be redirect to reseller site, reseller may get additional fee.
+            </div>
+        </div>
+</div>
+<div style="margin-top:20px; text-align:center; font-size: 16px; font-family: 'MuseoSans500';">
+    <span style="color:red;">If you have invite code</span>
+    <a href="javscript:void(0)" onclick="showPremiumKeyDialog(); return false;">Click here</a>
+</div>
+
+<div style="display: none;" id="form-placeholder"></div>
+<div style="display: none;" id="sms-dialog" ></div>
+<div id="get-email-dialog" style="display: none; ">
+    <p style="text-align: center; font-weight: bold;">Please create account on DataFile.com</p>
+    <p style="text-align: center; font-weight: bold;">If you already have account, please <a href="/login.html">Sign In</a></p>
+    <p class="error" style="display: none;text-align: center; font-weight: bold;"></p>
+	<table border="0" cellpadding="0" cellspacing="0">
+	<col width="130">
+	<col width="">
+	<tr>
+            <td style="text-align:right;padding-right:10px;"><b>E-mail<span class="star">*</span></b></td>
+            <td><input type="text" id="email" class="input-text" style="width:220px;" /></td>
+        </tr>
+        <tr>
+            <td style="text-align:right;padding-right:10px"><b>Password<span class="star">*</span></b></td>
+            <td><input type="password" id="password" class="input-text" style="width:220px;" /></td>
+        </tr>
+        <tr>
+            <td style="text-align:right;padding-right:10px"><b>Password re-type<span class="star">*</span></b></td>
+            <td><input type="password" id="conf_password" class="input-text" style="width:220px;" /></td>
+        </tr>
+        <tr>
+            <td style="text-align:right;padding-right:10px"><input type="checkbox" id="confirm" class="" /></td>
+            <td><b>I agree with&nbsp;<a href="/terms.html" target="_blank" title="Open in new page">Terms</a><span class="star">*</span></b></td>
+        </tr>  
+        </table>
+</div>
+<div id="premium-key-dialog" style="display: none;">
+    
+<style type="text/css">
+
+#premium-key-form td{
+    padding-top: 7px;
+}
+
+</style>
+
+<form action="/premium-key.html" method="post" id="premium-key-form">
+    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+        <col width="70" />
+                    <tr >
+                       <td  class="name ">Email </td>
+                       <td class="el" >
+<input type="text" name="email" id="email" value="" class="input-text" tabindex="1" style="width: 240px" /></td></tr>                <tr><td  class="name">Invite code</td><td class="el">
+<input type="text" name="key" id="key" value="" class="input-text" tabindex="2" style="width: 240px" /></td></tr>    </table>
+</form></div>
+
+<div id="premium-error-dialog" style="display: none;"></div>
+
+
+
+    <br clear="all" />
+    <br clear="all" />
+    <div class="clear"></div>
+
+    <div class="row">
+        <div class="premium gray-dotted-table">
+            <table border="0" cellspacing="0" cellpadding="0" width="100%">
+            <tr>
+                <th class="first"><span class="blue">Service Features</span></th>
+                <th class="second free">Free account</th>
+                <th class="premium th-blue-nrad"><div class="th-blue">Premium account</div></th>
+            </tr>
+            <tr>
+                <td class="gray bold">Download Speed</td>
+                <td class="purple"> 130 KB/sec</td>
+                <td class="purple bold">Unlimited</td>
+            </tr>
+            <tr>
+                <td class="gray bold">Waiting time before each download</td>
+                <td class="purple">30 seconds or more</td>
+                <td class="purple bold">None</td>
+            </tr>
+            <tr>
+                <td class="gray bold">Maximum download file Size</td>
+                <td class="purple">2 GB</td>
+                <td class="purple bold">Unlimited</td>
+            </tr>
+            <tr>
+                <td class="gray bold">CAPTCHA require</td>
+                <td class="purple">For each download</td>
+                <td class="purple bold">Never</td>
+            </tr>
+            <tr>
+                <td class="gray bold">Maximum Upload file Size</td>
+                <td class="purple">5 GB</td>
+                <td class="purple bold">30 GB</td>
+            </tr>
+            <tr>
+                <td class="gray bold">Files storage time</td>
+                <td class="purple">30 days</td>
+                <td class="purple bold">Unlimited</td>
+            </tr>
+
+            <tr>
+                <td class="gray bold">Resume aborted Download</td>
+                <td class="purple"><div class="no">&nbsp;</div></td>
+                <td class="purple"><div class="ok">&nbsp;</div></td>
+            </tr>
+
+            <tr>
+                <td class="gray bold">Support for download accelerators</td>
+                <td class="purple"><div class="no">&nbsp;</div></td>
+                <td class="purple"><div class="ok">&nbsp;</div></td>
+            </tr>
+            <tr>
+                <td class="gray bold">Parallel download</td>
+                <td class="purple"><div class="no">&nbsp;</div></td>
+                <td class="purple"><div class="ok">&nbsp;</div></td>
+            </tr>
+            <tr>
+                <td class="gray bold">No advertising</td>
+                <td class="purple"><div class="no">&nbsp;</div></td>
+                <td class="purple"><div class="ok">&nbsp;</div></td>
+            </tr>
+            </table>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <br clear="all" />
+    <div style="text-align: center;">
+        <p style="font-size: 16px; font-family: 'MuseoSans500'; color: #4C4C4C;">If you have any questions, please <a href="/help/contact.html">Contact us</a></p>
+    </div>
+</div>
+			<!--=========END=========CONTENT-INFO=========-->
+		</div>
+	</div>
+</div>
+<!--========= END CONTENT=========-->
+
+<!--=========FOOTER=========-->
+<div class="footer">
+	<div class="page-col">
+		<div class="row">
+			<div class="bottom-panel">
+				<div class="left"><div class="copyright">Copyright &copy; 2012-2015  <br /> All rights reserved</div></div>
+				<div class="center">
+					<div class="purse"></div>
+                                        <div class="green-txt">Get  more features with our <a href="https://www.datafile.com/getpremium.html">Premium access!</a></div>
+
+				</div>
+				<div class="right">
+                                <style type="text/css">
+                                .lr {
+                                    margin-bottom: 6px !important;
+                                    margin-top: -1px !important;
+                                    }
+                                </style>
+
+				</div>
+			</div>
+			<div class="bottom-menu">
+				<ul>
+					<li class="first"><a href="/terms.html">Terms of use</a><span>/</span></li>
+					<li><a href="/privacy.html">Privacy policy</a><span>/</span></li>
+					<li><a href="/dmca.html">DMCA</a><span>/</span></li>
+					<li><a href="/linkchecker.html">Link checker</a><span>/</span></li>
+                    <li><a href="/affiliates.html">Make money</a><span>/</span></li>
+                    <li><a href="/help/contact.html">Contact Us</a></li>
+                                        				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!--========= END FOOTER=========-->
+
+<div id="ajax-load-progress"></div>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter20570638 = new Ya.Metrika({id:20570638,
+                    webvisor:true,
+                    clickmap:true,
+                    ut:"noindex"});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/20570638?ut=noindex" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-51418974-1', 'datafile.com');
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+
+        
+
+</html>
+

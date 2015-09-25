@@ -1,0 +1,89 @@
+
+/* * Empty Stylesheet file.*/
+
+
+.mainFxmlClass {
+
+}
+#AnchorPane{
+    -fx-background-image: url("/img/frame.png");
+    -fx-background-repeat: stretch;   
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0); 
+}
+#pane1{
+    -fx-background-image: url("/img/grey.jpg");
+}
+.lbl_1{
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+    -fx-color:red;
+}
+#btn_aceptar{
+
+    -fx-background-image: url("/img/acep_norm.png");
+    -fx-background-repeat: space;
+    -fx-background-size: auto;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow( gaussian,rgba(255,255,255,0.5),0,0,0,1);
+
+}
+#btn_salir{
+
+    -fx-background-image: url("/img/salir_norm.png");
+    -fx-background-repeat: space ;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow( gaussian,rgba(255,255,255,0.5),0,0,0,1);
+
+}
+#btn_reset{
+
+    -fx-background-image: url("/img/eliminar_norm.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: auto;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow( gaussian,rgba(255,255,255,0.5),0,0,0,1);
+
+}
+
+#choice-box-menu-item .label {
+    -fx-text-fill: #31eb53;
+    -fx-font-size: 20;
+}
+
+#chkbox.label{
+
+    -fx-text-fill: #31eb53;
+    -fx-font-size: 20;
+}
+#Anchorpane.chkbox.label {
+  -fx-text-fill: green;
+}
+.lbl_2{
+
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+    -fx-color:red;
+}
+
+.label{
+
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-color:red;
+}
+
+.btn_reset:focused {
+    -fx-border-color: red, red;
+    -fx-border-width: 1, 1;
+    -fx-border-style: solid;
+    
+}
+.btn_reset:pressed, .btn_reset:default:hover:pressed {
+  -fx-background-color: black;
+  -fx-text-fill: #1d1d1d;
+}
+
